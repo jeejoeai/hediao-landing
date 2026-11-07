@@ -728,8 +728,7 @@ body.nav-open .nav-overlay{opacity:1;visibility:visible}
           </div>
         </div>
         <div class="contact-panel reveal" style="--d:.1s">
-          <!-- REPLACE: 1) 把 YOUR_FORM_ID 换成你在 formspree.io 创建表单后得到的 ID -->
-          <form id="inquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <form id="inquiry-form" action="https://formspree.io/f/myeeajwa" method="POST">
             <input type="hidden" name="_subject" value="New inquiry — Hediao website">
             <div class="hp-field" aria-hidden="true">
               <label for="hp-email">Leave this field empty</label>
@@ -1102,12 +1101,6 @@ body.nav-open .nav-overlay{opacity:1;visibility:visible}
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
-
-    if (form.action.indexOf('YOUR_FORM_ID') !== -1) {
-      statusBox.className = 'form-status err is-visible';
-      statusBox.textContent = 'The form is not connected yet. Please email us directly at ' + contactEmail.textContent + ' — or replace YOUR_FORM_ID in the form action with your Formspree form ID.';
-      return;
-    }
 
     var data = new FormData(form);
     submitBtn.disabled = true;
